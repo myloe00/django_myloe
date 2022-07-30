@@ -4,13 +4,13 @@ from django.conf import settings
 import logging
 
 
-class KafkaConfig(AppConfig):
+class CommonConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'kafka'
+    name = 'common'
 
     def ready(self):
         """配置项拆分至不同app中的settings.py"""
-        # todo django启动时自动去收集相关settings（对静态文件的收集命令或许可以参考）
+        # todo django启动时自动去收集相关settings
         # question： 继承重写的AppConfig为何无法生效
         settings_key = [key for key in dir(app_settings) if not key.startswith("__")]
         base_settings = settings.__dir__().copy()

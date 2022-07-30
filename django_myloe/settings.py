@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'kafka'
+    'kafka_command'
 ]
 
 MIDDLEWARE = [
@@ -123,4 +123,7 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+SERVER = "192.168.0.201"
+PORT = 9092
+VERSION = "2.8.1"
 
